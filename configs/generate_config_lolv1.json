@@ -1,0 +1,37 @@
+{
+    "seed": 42,
+    "dtype": "float16",
+
+    "model": {
+        "dim": 64,
+        "dim_mults": [1, 2, 4, 8],
+        "self_condition": true,
+        "flash_attn": true,
+        "res_type": "TE"
+    },
+
+    "diffusion": {
+        "image_size": 128,
+        "timesteps": 100,
+        "sampling_timesteps": 1,
+        "ddim_sampling_eta": 0.0,
+        "objective": "pred_x0",
+        "beta_schedule": "cosine",
+        "use_vgg_loss": true,
+        "use_ssim_loss": true
+    },
+
+    "eval_data": {
+        "folder": "data/LOLdataset/eval",
+        "mode_name": ["low"],
+        "output_folder": "outputs/pwcdiff_te_ours_t100_vgg_ssim/LOLdataset"
+    },
+
+    "generator": {
+        "batch_size": 1,
+        "milestone": "latest",
+        "mixed_precision": true,
+        "illumination_map": "ours",
+        "results_folder": "checkpoints/pwcdiff_te_ours_t100_vgg_ssim"
+    }
+}

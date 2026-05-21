@@ -1,0 +1,64 @@
+{
+    "seed": 42,
+    "dtype": "float32",
+
+    "model": {
+        "dim": 64,
+        "dim_mults": [1, 2, 4, 8],
+        "self_condition": true,
+        "flash_attn": true,
+        "res_type": "TE"
+    },
+
+    "diffusion": {
+        "image_size": 128,
+        "timesteps": 100,
+        "sampling_timesteps": 25,
+        "objective": "pred_x0",
+        "beta_schedule": "cosine",
+        "use_vgg_loss": true,
+        "use_ssim_loss": true
+    },
+
+    "train_data": {
+        "folders": [
+            "data/LOLdataset/train", 
+            "data/LOL-v2/Real_captured/train", 
+            "data/LOL-v2/Synthetic/train"
+        ],
+        "mode_names": [
+            ["low", "high"],
+            ["low", "high"],
+            ["low", "high"]
+        ]
+    },
+
+    "eval_data": {
+        "folders": [
+            "data/LOLdataset/eval", 
+            "data/LOL-v2/Real_captured/eval", 
+            "data/LOL-v2/Synthetic/eval"
+        ],
+        "mode_names": [
+            ["low", "high"],
+            ["low", "high"],
+            ["low", "high"]
+        ]
+    },
+
+    "trainer": {
+        "batch_size": 16,
+        "train_lr": 8e-5,
+        "train_steps": 1000000,
+        "gradient_accumulate": 2,
+        "ema_decay": 0.995,
+        "mixed_precision": true,
+        "calculate_psnr": true,
+        "save_steps": 1000,
+        "save_best_and_latest_only": true,
+        "illumination_map": "ours",
+        "results_folder": "checkpoints/pwcdiff_te_ours_t100_vgg_ssim",
+        "resume": false,
+        "job_name": "Train TE PWC-Diff"
+    }
+}

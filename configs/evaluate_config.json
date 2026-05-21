@@ -1,0 +1,41 @@
+{
+    "save_detailed_scores": true,
+    "save_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim",
+    "full_metrics": [
+        "psnr", "ssim", "lpips"
+    ],
+    "no_metrics": [
+        "niqe"
+    ],
+    "full_ref": [
+        {
+            "name": "LOLv1", 
+            "gts_dir": "data/LOLdataset/eval/high", 
+            "preds_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim/LOLdataset"
+        },
+        {
+            "name": "LOLv2-S", 
+            "gts_dir": "data/LOL-v2/Synthetic/eval/high", 
+            "preds_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim/LOLv2-S"
+        },
+        {
+            "name": "LOLv2-R", 
+            "gts_dir": "data/LOL-v2/Real_captured/eval/high", 
+            "preds_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim/LOLv2-R"
+        }
+    ],
+    "no_ref": [
+        {
+            "name": "DICM", 
+            "preds_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim/DICM"
+        },
+        {
+            "name": "LIME", 
+            "preds_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim/LIME"
+        },
+        {
+            "name": "MEF", 
+            "preds_dir": "outputs/pwcdiff_te_ours_t100_vgg_ssim/MEF"
+        }
+    ]
+}
