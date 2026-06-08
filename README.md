@@ -24,6 +24,7 @@ Official implementation of **PWC-Diff**, a diffusion-based framework for low-lig
 
 ## 📢 News
 
+**2026-06-08:** Pre-trained model is released. 🚀 <br>
 **2026-05-21:** Evaluation scripts and benchmark configs are released. 💫 <br>
 **2025-05-21:** Training and inference code has been released. ⭐ <br>
 **2026-04-08:** PWC-Diff has been accepted at ISCC 2026. 🚀 <br>
@@ -134,6 +135,7 @@ python generate.py --config configs/generate_config_lolv1.json
 ```
 
 ### Notes
+- You can use our pre-trained model available at [Google Drive](https://drive.google.com/file/d/1xzyacTq__Cz0J-L5kHmd6CPQL6LwYzaG/view?usp=sharing) and place it in the `checkpoints/pwcdiff_te_ours_t100_vgg_ssim` directory. 
 - Generated samples and logs are saved inside `outputs/`
 - To generate enhanced images for other benchmarks, update the `eval_data` section inside the [generation config](configs/generate_config_lolv1.json) file
 
